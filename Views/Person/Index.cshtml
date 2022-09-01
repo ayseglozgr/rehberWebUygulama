@@ -1,0 +1,39 @@
+﻿@model rehberWebUygulama.Models.PersonModel.PersonIndexViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Kişiler</h2>
+@Html.ActionLink("Yeni Kişi", "Add", null, new { @class = "btn btn-primary" })
+<br />
+<br />
+<table class="table">
+    <tr>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Cep Telefonu</th>
+        <th>E-mail</th>
+        <th>İşlemler</th>
+    </tr>
+
+    @foreach (var person in Model.Persons)
+    {
+<tr>
+    <td>@person.name</td>
+    <td>@person.surname</td>
+    <td>@person.mobilePhone</td>
+    @*<td>@(Model.Cities.Where(q=>q.plateCode ==person.cityId).SingleOrDefault().nameOfCity )</td>*@
+    <td><a href="mailto:@person.emailaddress">@(person.emailaddress)</a></td>
+    <td>
+        @Html.ActionLink("Güncelle", "Update", new { Id = person.Id }) |
+        @Html.ActionLink("Detay", "Detail", new { Id = person.Id }) |
+        @Html.ActionLink("Sil", "Delete", new { Id = person.Id },
+        new { onClick = "return confirm('kaydı silmek istediğine emin misiniz?');" })
+    </td>
+
+
+</tr>
+    }
+
+</table>

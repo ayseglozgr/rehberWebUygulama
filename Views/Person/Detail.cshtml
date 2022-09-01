@@ -1,0 +1,23 @@
+﻿@model rehberWebUygulama.Models.PersonModel.personDetailViewModel
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Person.name @Model.Person.surname Bilgileri  </h2>
+<hr/>
+<dl class="dl-horizontal">
+    <dt>@Html.DisplayNameFor(x => x.Person.homePhone)</dt>
+    <dd>@Model.Person.homePhone</dd>
+    <dt>@Html.DisplayNameFor(x => x.Person.mobilePhone)</dt>
+    <dd>@Model.Person.mobilePhone</dd>
+    <dt>@Html.DisplayNameFor(x => x.Person.officePhone)</dt>
+    <dd>@Model.Person.officePhone</dd>
+    <dt>@Html.DisplayNameFor(x => x.Person.emailaddress)</dt>
+    <dd>@Model.Person.emailaddress</dd>
+    <dt>@Html.DisplayNameFor(x => x.Person.address)</dt>
+    <dd>@Model.Person.address</dd>
+    <dt>@Html.DisplayNameFor(x => x.Person.cityId)</dt>
+    <dd>@Model.Person.city.nameOfCity</dd>
+</dl>
+

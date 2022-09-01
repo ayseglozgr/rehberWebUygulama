@@ -1,0 +1,35 @@
+﻿@model rehberWebUygulama.Models.Entities.City
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detay</h2>
+
+<div>
+    <h4>Şehir</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nameOfCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nameOfCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.plateCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.plateCode)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Listeye geri dön", "Index")
+</p>
